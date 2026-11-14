@@ -1,0 +1,371 @@
+/* 1. Variables: Paleta Verde y Blanco */
+:root {
+    --verde-oscuro: #064E3B;
+    --verde-medio: #059669;
+    --verde-claro: #D1FAE5;
+    --fondo-menta: #ECFDF5;
+    --blanco: #FFFFFF;
+    --texto: #111827;
+    --borde: #A7F3D0;
+}
+
+/* 2. Reinicio y prevención de desplazamiento horizontal */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    background-color: var(--fondo-menta);
+    color: var(--texto);
+    overflow-x: hidden; /* Evita scroll horizontal en 375px */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 3. Tipografía */
+h1, h2, h3 {
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.4rem;
+}
+
+h2 {
+    font-size: 1.45rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--verde-oscuro);
+    border-bottom: 2px solid var(--verde-claro);
+    padding-bottom: 0.4rem;
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+    color: var(--verde-oscuro);
+}
+
+/* 4. Cabecera y menú (Flexbox) */
+.cabecera {
+    background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-medio));
+    color: var(--blanco);
+    padding: 1.5rem 1rem 2.2rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(6, 78, 59, 0.15);
+}
+
+.cabecera p {
+    margin: 0;
+    opacity: 0.95;
+    font-size: 1rem;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.menu a {
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: 6px;
+    transition: background-color 0.2s, transform 0.2s;
+    display: inline-block;
+}
+
+.menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* 5. Diseño base (Móvil 375px: 1 columna) */
+.contenedor-principal {
+    max-width: 1180px;
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.columna-izquierda {
+    text-align: center;
+}
+
+.foto {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1rem;
+    display: block;
+    border: 4px solid var(--verde-medio);
+}
+
+.botones-perfil {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1.2rem;
+}
+
+.columna-derecha {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* 6. Tarjetas */
+.tarjeta {
+    background-color: var(--blanco);
+    border: 1px solid var(--borde);
+    border-top: 4px solid var(--verde-medio);
+    border-radius: 12px;
+    padding: 1.3rem;
+    box-shadow: 0 4px 12px rgba(6, 78, 59, 0.06);
+}
+
+/* 7. Botones y efectos hover */
+.boton {
+    display: inline-block;
+    background-color: var(--verde-medio);
+    color: var(--blanco);
+    text-decoration: none;
+    padding: 0.65rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 0.95rem;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.boton:hover {
+    background-color: var(--verde-oscuro);
+    transform: translateY(-2px);
+}
+
+.boton-secundario {
+    background-color: var(--blanco);
+    color: var(--verde-oscuro);
+    border: 2px solid var(--verde-medio);
+}
+
+.boton-secundario:hover {
+    background-color: var(--verde-claro);
+    color: var(--verde-oscuro);
+}
+
+/* 8. Habilidades y Formación */
+.lista-habilidades {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.lista-habilidades li {
+    background-color: var(--verde-claro);
+    color: var(--verde-oscuro);
+    border: 1px solid var(--borde);
+    padding: 0.4rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.lista-formacion {
+    padding-left: 1.2rem;
+    margin: 0;
+}
+
+.lista-formacion li {
+    margin-bottom: 0.5rem;
+}
+
+/* 9. Servicios (1 columna en móvil) */
+.grid-servicios {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.servicio {
+    background-color: var(--fondo-menta);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--borde);
+}
+
+.servicio p {
+    margin: 0;
+    font-size: 0.92rem;
+}
+
+/* 10. Galería de Proyectos (Móvil: 1 columna) */
+.grid-proyectos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+}
+
+.proyecto {
+    background-color: var(--fondo-menta);
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.proyecto:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(6, 78, 59, 0.12);
+}
+
+.proyecto img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+}
+
+.proyecto-info {
+    padding: 1rem;
+}
+
+.proyecto-info p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* 11. Formulario de contacto */
+.formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.formulario-contacto label {
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--verde-oscuro);
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+    width: 100%;
+    padding: 0.65rem;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    background-color: var(--fondo-menta);
+}
+
+.formulario-contacto input:focus,
+.formulario-contacto textarea:focus {
+    outline: none;
+    border-color: var(--verde-medio);
+    background-color: var(--blanco);
+}
+
+/* 12. Botón fijo volver arriba (position: fixed) */
+.volver-arriba {
+    position: fixed;
+    bottom: 1.2rem;
+    right: 1.2rem;
+    background-color: var(--verde-oscuro);
+    color: var(--blanco);
+    text-decoration: none;
+    padding: 0.6rem 0.95rem;
+    border-radius: 50px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    z-index: 100;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.volver-arriba:hover {
+    background-color: var(--verde-medio);
+    transform: translateY(-3px);
+}
+
+/* 13. Pie de página */
+.pie {
+    background-color: var(--verde-oscuro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 1.2rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+.pie p {
+    margin: 0;
+}
+
+/* =========================================================
+   RESPONSIVE: TAMAÑO 2 (Tablet desde 600px -> Galería 2 cols)
+   ========================================================= */
+@media (min-width: 600px) {
+    .grid-servicios {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-proyectos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =========================================================
+   RESPONSIVE: TAMAÑO 3 (Escritorio desde 900px -> Layout 2 cols + Galería 3 cols)
+   ========================================================= */
+@media (min-width: 900px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .contenedor-principal {
+        padding: 0 1.5rem;
+        grid-template-columns: 310px 1fr; /* Secciones en 2 columnas desde 900px */
+        gap: 2rem;
+        align-items: start;
+    }
+
+    .columna-izquierda {
+        position: sticky; /* Efecto sticky en escritorio */
+        top: 1.5rem;
+    }
+
+    .grid-proyectos {
+        grid-template-columns: repeat(3, 1fr); /* Galería en 3 columnas */
+    }
+}
