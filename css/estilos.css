@@ -380,3 +380,6 @@ h3 {
         grid-template-columns: repeat(3, 1fr); /* Galería en 3 columnas */
     }
 }
+.oculto {
+  display: none;
+}
